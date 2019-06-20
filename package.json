@@ -1,5 +1,5 @@
 {
-  "name": "flen-finder",
+  "name": "friend-finder",
   "version": "1.0.0",
   "description": "Friend Finder - Node and Express Servers",
   "main": "server.js",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/obscura101/Flen-Finder.git"
+    "url": "git+https://github.com/obscura101/Friend-Finder.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/obscura101/Flen-Finder/issues"
+    "url": "https://github.com/obscura101/Friend-Finder/issues"
   },
-  "homepage": "https://github.com/obscura101/Flen-Finder#readme",
+  "homepage": "https://github.com/obscura101/Friend-Finder#readme",
   "dependencies": {
     "express": "^4.17.1",
     "path": "^0.12.7"

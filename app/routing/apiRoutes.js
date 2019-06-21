@@ -15,6 +15,7 @@ module.exports = function(app) {
         var potentialMatches = [];
    
         if (friendData.length >= 1) {
+            
             friendData.forEach(function(friend) {
                 var difference = 0;
                 var differenceTemp = parseInt(friend.total) - parseInt(potentialFriend.total);
@@ -29,10 +30,9 @@ module.exports = function(app) {
                     potentialMatches.push(friendData[i]);
                 }
             }
+
             res.json(potentialMatches);
-
         }
-
         friendData.push(potentialFriend);
     });
-};
+ }

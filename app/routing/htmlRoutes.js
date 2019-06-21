@@ -1,7 +1,6 @@
 // Dependencies - Activity 16 
 
 var path = require('path');
-var express = require("express");
 
 // Routing - Activity 16
 module.exports = function (app) {

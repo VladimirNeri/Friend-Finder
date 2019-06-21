@@ -2,6 +2,7 @@
 // Dependencies - Activity 16
 var express = require("express");
 var bodyParser = require("body-parser");
+var path = require('path');
 
 // Tells node that we are creating an "express" server
 var app = express();
@@ -20,4 +21,5 @@ require("./app/routing/htmlRoutes")(app);
 // Listener
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
+
 });

@@ -8,9 +8,9 @@ module.exports = function(app) {
     });
 
     app.post("/api/friends", function(req, res) {
-
+       
         // Need JS Here
-        var potentialFriend = req.body;
+        var userData = req.body;
         var overallDiff = [];
         var potentialMatches = [];
    
@@ -18,21 +18,25 @@ module.exports = function(app) {
             
             friendData.forEach(function(friend) {
                 var difference = 0;
-                var differenceTemp = parseInt(friend.total) - parseInt(potentialFriend.total);
+                var differenceTemp = parseInt(friend.total) - parseInt(userData.total);
                 difference = difference + Math.abs(differenceTemp);
+
                 overallDiff.push(difference);
 
             });
 
             var minDiff = Math.min.apply(Math, overallDiff);
+            
             for (var i = 0; i < overallDiff.length; i++) {
+                
                 if (overallDiff[i] === minDiff) {
                     potentialMatches.push(friendData[i]);
                 }
             }
 
             res.json(potentialMatches);
+
         }
-        friendData.push(potentialFriend);
+        friendData.push(userData);
     });
  }

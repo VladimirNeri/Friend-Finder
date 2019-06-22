@@ -8,19 +8,20 @@ module.exports = function(app) {
     });
 
     app.post("/api/friends", function(req, res) {
-       
+	   
+		// Create an object to hold best match 
 		var bestMatch = {
 			name: "",
 			photo: "",
 			friendDifference: 1000
 		  };
 	  
+		// Store user data in req.body . Activity 16
 		  var userData = req.body;
 		  var userScores = userData.scores;
 		  var totalDifference = 0;
 	
 		  for (var i = 0; i < friends.length; i++) {
-	  
 			console.log(friends[i].name);
 			totalDifference = 0;
 	  

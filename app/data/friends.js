@@ -1,6 +1,6 @@
 var friends = [{
-    "name":"Ahmed",
-    "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+    "name":"Donald Trump",
+    "photo":"https://upload.wikimedia.org/wikipedia/commons/e/e9/Donald_Trump_NYMA.jpg",
     "scores":[
       5,
       1,

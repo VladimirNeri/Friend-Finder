@@ -1,67 +1,44 @@
 // Activity 16
-var friendData = require("../data/friends.js");
+var friends = require("../data/friends.js");
 
 module.exports = function(app) {
     
     app.get("/api/friends", function(req, res) {
-        res.json(friendData);
+        res.json(friends);
     });
 
     app.post("/api/friends", function(req, res) {
        
         // Need JS Here
+        var bestMatch = {
+            name: "",
+            photo: "",
+            friendDifference: 70
+        };
+
         var userData = req.body;
-        var overallDiff = [];
-        var potentialMatches = [];
-    
-            
-        function sumArr(arr) {
-            var sum = 0;
-            for (var i = 0; i < arr.length; i++) {
-                sum = sum += Number(arr[i]);
+        var userScores = userData.scores;
+        var userName = userData.name;
+        var userPhoto = userData.photo;
+        var totalDifference = 0;
+
+        //loop through the friends data array of objects to get each friends scores
+        for (var i = 0; i < friends.length - 1; i++) {
+            console.log(friends[i].name);
+            totalDifference = 0;
+
+            for (var j = 0; j < 10; j++) {
+              
+                totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
+
+                if (totalDifference <= bestMatch.friendDifference) {
+                    bestMatch.name = friends[i].name;
+                    bestMatch.photo = friends[i].photo;
+                    bestMatch.friendDifference = totalDifference;
+                }
             }
-            return sum;
         }
-        
-        console.log(sumArr(userData.scores));
-    
-        if (friendData.length >= 1) {
-
-            var totalDifference;
-            
-            for (var i = 0; i < friendData.length; i++) {
-                var currentFriend = friendData[i];
-                totalDifference = 0;
-                console.log(currentFriend.name);
-
-                 //  Compare scores of current friend and user score.  
-                 
-            }
-
-            //  Compare scores of current friend and user score.  
-            //
-
-            // friendData.forEach(function(friend) {
-            //     var difference = 0;
-            //     var differenceTemp = parseInt(friend.total) - parseInt(userData.total);
-            //     difference = difference + Math.abs(differenceTemp);
-
-            //     overallDiff.push(difference);
-
-            // });
-
-            // var minDiff = Math.min.apply(Math, overallDiff);
-            
-            // for (var i = 0; i < overallDiff.length; i++) {
-                
-            //     if (overallDiff[i] === minDiff) {
-            //         potentialMatches.push(friendData[i]);
-            //     }
-            // }
-
-            // res.json(potentialMatches);
-
-        }
-        friendData.push(userData);
+        friends.push(userData);
+        res.json(bestMatch);
     });
  }

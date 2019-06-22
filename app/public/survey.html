@@ -179,7 +179,7 @@
                           <br>
                           <br>
                           <br>
-                          <button type="submit" class="btn btn-primary submit" id="submitBtn">Submit</button>
+                          <button type="submit" class="btn btn-primary submit" id="submit">Submit</button>
                       </form>
                   </div>
               </div>
@@ -202,8 +202,8 @@
               </div>
               <div class="modal-body">
                   <div class="matchDetails">
-                      <h3 id="modal_name"></h3>
-                      <img id="modal_photo" src="" alt="Match Photo">
+                      <h3 id="match-name"></h3>
+                      <img id="match-image" src="" alt="Match Photo">
                   </div>
               </div>
               <div class="modal-footer">
@@ -252,7 +252,7 @@
 
 
     // // Capture the form inputs
-    $("#submitBtn").on("click", function(event) {
+    $("#submit").on("click", function(event) {
       event.preventDefault();
       console.log('i was clicked');
       // Form validation
@@ -280,16 +280,16 @@
           name: $("#name").val(),
           photo: $("#photo").val(),
           scores: [
-            Number($("#q1").val()),
-            Number($("#q2").val()),
-            Number($("#q3").val()),
-            Number($("#q4").val()),
-            Number($("#q5").val()),
-            Number($("#q6").val()),
-            Number($("#q7").val()),
-            Number($("#q8").val()),
-            Number($("#q9").val()),
-            Number($("#q10").val())
+          $("#q1").val(),
+          $("#q2").val(),
+          $("#q3").val(),
+          $("#q4").val(),
+          $("#q5").val(),
+          $("#q6").val(),
+          $("#q7").val(),
+          $("#q8").val(),
+          $("#q9").val(),
+          $("#q10").val()
           ]
           
         };

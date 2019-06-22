@@ -179,7 +179,7 @@
                           <br>
                           <br>
                           <br>
-                          <button type="submit" class="btn btn-primary submit">Submit</button>
+                          <button type="submit" class="btn btn-primary submit" id="submitBtn">Submit</button>
                       </form>
                   </div>
               </div>
@@ -250,10 +250,11 @@
       $(selector).chosen(config[selector]);
     }
 
-    // Capture the form inputs
-    $("#submit").on("click", function(event) {
-      event.preventDefault();
 
+    // // Capture the form inputs
+    $("#submitBtn").on("click", function(event) {
+      event.preventDefault();
+      console.log('i was clicked');
       // Form validation
       function validateForm() {
         var isValid = true;
@@ -279,17 +280,18 @@
           name: $("#name").val(),
           photo: $("#photo").val(),
           scores: [
-            $("#q1").val(),
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
-            $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
+            Number($("#q1").val()),
+            Number($("#q2").val()),
+            Number($("#q3").val()),
+            Number($("#q4").val()),
+            Number($("#q5").val()),
+            Number($("#q6").val()),
+            Number($("#q7").val()),
+            Number($("#q8").val()),
+            Number($("#q9").val()),
+            Number($("#q10").val())
           ]
+          
         };
 
         // AJAX post the data to the friends API.

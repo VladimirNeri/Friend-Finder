@@ -13,28 +13,53 @@ module.exports = function(app) {
         var userData = req.body;
         var overallDiff = [];
         var potentialMatches = [];
-   
+    
+            
+        function sumArr(arr) {
+            var sum = 0;
+            for (var i = 0; i < arr.length; i++) {
+                sum = sum += Number(arr[i]);
+            }
+            return sum;
+        }
+        
+        console.log(sumArr(userData.scores));
+    
         if (friendData.length >= 1) {
+
+            var totalDifference;
             
-            friendData.forEach(function(friend) {
-                var difference = 0;
-                var differenceTemp = parseInt(friend.total) - parseInt(userData.total);
-                difference = difference + Math.abs(differenceTemp);
+            for (var i = 0; i < friendData.length; i++) {
+                var currentFriend = friendData[i];
+                totalDifference = 0;
+                console.log(currentFriend.name);
 
-                overallDiff.push(difference);
-
-            });
-
-            var minDiff = Math.min.apply(Math, overallDiff);
-            
-            for (var i = 0; i < overallDiff.length; i++) {
-                
-                if (overallDiff[i] === minDiff) {
-                    potentialMatches.push(friendData[i]);
-                }
+                 //  Compare scores of current friend and user score.  
+                 
             }
 
-            res.json(potentialMatches);
+            //  Compare scores of current friend and user score.  
+            //
+
+            // friendData.forEach(function(friend) {
+            //     var difference = 0;
+            //     var differenceTemp = parseInt(friend.total) - parseInt(userData.total);
+            //     difference = difference + Math.abs(differenceTemp);
+
+            //     overallDiff.push(difference);
+
+            // });
+
+            // var minDiff = Math.min.apply(Math, overallDiff);
+            
+            // for (var i = 0; i < overallDiff.length; i++) {
+                
+            //     if (overallDiff[i] === minDiff) {
+            //         potentialMatches.push(friendData[i]);
+            //     }
+            // }
+
+            // res.json(potentialMatches);
 
         }
         friendData.push(userData);

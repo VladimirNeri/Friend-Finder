@@ -9,14 +9,14 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(req, res) {
 	   
-		// Create an object to hold best friend 
-		var bestFriend = {
+		// Create an object to hold best match 
+		var bestMatch = {
 			name: "",
 			photo: "",
 			friendDifference: 1000
 		  };
 	  
-		// Store user data in req.body . Activity 16
+		// Store user data in req.body . Activity 13.
 		  var userData = req.body;
 		  var userScores = userData.scores;
 		  var totalDifference = 0;
@@ -28,16 +28,16 @@ module.exports = function(app) {
 			for (var j = 0; j < friends[i].scores[j]; j++) {
 	
 			  totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
-			  if (totalDifference <= bestFriend.friendDifference) {
-				bestFriend.name = friends[i].name;
-				bestFriend.photo = friends[i].photo;
-				bestFriend.friendDifference = totalDifference;
+			  if (totalDifference <= bestMatch.friendDifference) {
+				bestMatch.name = friends[i].name;
+				bestMatch.photo = friends[i].photo;
+				bestMatch.friendDifference = totalDifference;
 			  }
 			}
 		  }
 	  
 		  friends.push(userData);
-		  res.json(bestFriend);
+		  res.json(bestMatch);
 	  
     });
  }

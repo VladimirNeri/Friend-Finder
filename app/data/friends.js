@@ -16,7 +16,7 @@ var friends = [{
 },
 {
   "name": "Kim Jung Un",
-  "photo":"https://timedotcom.files.wordpress.com/2015/01/north-korea-kim-jong-un.jpg",
+  "photo":"https://upload.wikimedia.org/wikipedia/commons/d/d9/Kim_Jong-un_IKS_2018.jpg",
   "scores":[
       5,
       1,
@@ -32,7 +32,7 @@ var friends = [{
 },
 {
   "name": "Vladimir Putin",
-  "photo":"https://www.thesun.co.uk/wp-content/uploads/2016/10/nintchdbpict000183259183.jpg?w=960",
+  "photo":"https://upload.wikimedia.org/wikipedia/commons/f/ff/Vladimir_Putin_2019-04-12.jpg",
   "scores":[
       5,
       1,
@@ -45,6 +45,54 @@ var friends = [{
       3,
       1
     ]
+},
+{
+  "name": "Johnny Depp ",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/1/15/JohnnyDepp2018.jpg",
+  "scores": [
+    "4",
+    "4",
+    "3",
+    "5",
+    "2",
+    "3",
+    "5",
+    "2",
+    "4",
+    "4"
+  ]
+},
+{
+  "name": "Stormy Daniels",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/8/80/Stormy_Daniels_2015.jpg",
+  "scores": [
+    "3",
+    "4",
+    "4",
+    "3",
+    "3",
+    "4",
+    "4",
+    "4",
+    "3",
+    "2"
+  ]
+},
+{
+  "name": "Dennis Rodman ",
+  "photo": "https://upload.wikimedia.org/wikipedia/commons/8/86/Dennis_Rodman%2C_2001.jpg",
+  "scores": [
+    "3",
+    "4",
+    "3",
+    "5",
+    "5",
+    "1",
+    "3",
+    "4",
+    "2",
+    "3"
+  ]
 }
 ];
 

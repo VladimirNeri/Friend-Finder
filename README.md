@@ -57,3 +57,14 @@ You will use Express to handle routing. Make sure you deploy your app to Heroku 
 7. Once you've found the current user's most compatible friend, display the result as a modal pop-up.
    * The modal should display both the name and picture of the closest match.
 
+- - -
+
+## Technologies Used
+
+- HTML
+- CSS
+- Javascript
+- JQuery
+- Node.js
+- Express Server
+- Heroku
